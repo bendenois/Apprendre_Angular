@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Majeu ou mineur</title>
+    </head>
+
+    <body style="background-color: #F5F5F5;">
+<div ng-app="myApp">
+    <div ng-controller="exemple1Ctrl">
+        <input ng-model="age"/>
+        <span>Vous êtes <b ng-bind="majeurOrMineurText()"></b></span>
+</div>
+
+<script type="text/javascript">
+  // Mon code Javascript
+var myApp = angular.module('myApp',[]);
+
+myApp.controller("exemple1Ctrl", function($scope){
+    $scope.age = 0;
+    $scope.majeurOrMineurText = function(){
+        return ($scope.age >= 18) ? "majeur" : "mineur";    
+    };
+});</script>
+
+    </body>
+</html>
